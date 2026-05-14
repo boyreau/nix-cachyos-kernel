@@ -17,17 +17,11 @@ let
 in
 builtins.listToAttrs (
   builtins.map (v: lib.nameValuePair v.pname v) [
-    # Latest kernel, provide all LTO/CPU arch variants
+    # Latest kernel, provide all LTO and v3/v4/zen4 arch variants
     (mkCachyKernel {
       pname = "linux-cachyos-latest";
       inherit (linuxSources.latest) version src;
       configVariant = "linux-cachyos";
-    })
-    (mkCachyKernel {
-      pname = "linux-cachyos-latest-x86_64-v2";
-      inherit (linuxSources.latest) version src;
-      configVariant = "linux-cachyos";
-      processorOpt = "x86_64-v2";
     })
     (mkCachyKernel {
       pname = "linux-cachyos-latest-x86_64-v3";
@@ -52,13 +46,6 @@ builtins.listToAttrs (
       inherit (linuxSources.latest) version src;
       configVariant = "linux-cachyos";
       lto = "thin";
-    })
-    (mkCachyKernel {
-      pname = "linux-cachyos-latest-lto-x86_64-v2";
-      inherit (linuxSources.latest) version src;
-      configVariant = "linux-cachyos";
-      lto = "thin";
-      processorOpt = "x86_64-v2";
     })
     (mkCachyKernel {
       pname = "linux-cachyos-latest-lto-x86_64-v3";
@@ -89,12 +76,6 @@ builtins.listToAttrs (
       configVariant = "linux-cachyos-lts";
     })
     (mkCachyKernel {
-      pname = "linux-cachyos-lts-x86_64-v2";
-      inherit (linuxSources.lts) version src;
-      configVariant = "linux-cachyos-lts";
-      processorOpt = "x86_64-v2";
-    })
-    (mkCachyKernel {
       pname = "linux-cachyos-lts-x86_64-v3";
       inherit (linuxSources.lts) version src;
       configVariant = "linux-cachyos-lts";
@@ -119,13 +100,6 @@ builtins.listToAttrs (
       lto = "thin";
     })
     (mkCachyKernel {
-      pname = "linux-cachyos-lts-lto-x86_64-v2";
-      inherit (linuxSources.lts) version src;
-      configVariant = "linux-cachyos-lts";
-      lto = "thin";
-      processorOpt = "x86_64-v2";
-    })
-    (mkCachyKernel {
       pname = "linux-cachyos-lts-lto-x86_64-v3";
       inherit (linuxSources.lts) version src;
       configVariant = "linux-cachyos-lts";
@@ -147,6 +121,66 @@ builtins.listToAttrs (
       processorOpt = "zen4";
     })
 
+    # BORE variant
+    (mkCachyKernel {
+      pname = "linux-cachyos-bore";
+      inherit (linuxSources.latest) version src;
+      configVariant = "linux-cachyos-bore";
+      cpusched = "bore";
+    })
+    (mkCachyKernel {
+      pname = "linux-cachyos-bore-x86_64-v3";
+      inherit (linuxSources.latest) version src;
+      configVariant = "linux-cachyos-bore";
+      cpusched = "bore";
+      processorOpt = "x86_64-v3";
+    })
+    (mkCachyKernel {
+      pname = "linux-cachyos-bore-x86_64-v4";
+      inherit (linuxSources.latest) version src;
+      configVariant = "linux-cachyos-bore";
+      cpusched = "bore";
+      processorOpt = "x86_64-v4";
+    })
+    (mkCachyKernel {
+      pname = "linux-cachyos-bore-zen4";
+      inherit (linuxSources.latest) version src;
+      configVariant = "linux-cachyos-bore";
+      cpusched = "bore";
+      processorOpt = "zen4";
+    })
+    (mkCachyKernel {
+      pname = "linux-cachyos-bore-lto";
+      inherit (linuxSources.latest) version src;
+      configVariant = "linux-cachyos-bore";
+      lto = "thin";
+      cpusched = "bore";
+    })
+    (mkCachyKernel {
+      pname = "linux-cachyos-bore-lto-x86_64-v3";
+      inherit (linuxSources.latest) version src;
+      configVariant = "linux-cachyos-bore";
+      lto = "thin";
+      cpusched = "bore";
+      processorOpt = "x86_64-v3";
+    })
+    (mkCachyKernel {
+      pname = "linux-cachyos-bore-lto-x86_64-v4";
+      inherit (linuxSources.latest) version src;
+      configVariant = "linux-cachyos-bore";
+      lto = "thin";
+      cpusched = "bore";
+      processorOpt = "x86_64-v4";
+    })
+    (mkCachyKernel {
+      pname = "linux-cachyos-bore-lto-zen4";
+      inherit (linuxSources.latest) version src;
+      configVariant = "linux-cachyos-bore";
+      lto = "thin";
+      cpusched = "bore";
+      processorOpt = "zen4";
+    })
+
     # Additional CachyOS provided variants
     (mkCachyKernel {
       pname = "linux-cachyos-bmq";
@@ -160,19 +194,6 @@ builtins.listToAttrs (
       configVariant = "linux-cachyos-bmq";
       lto = "thin";
       cpusched = "bmq";
-    })
-    (mkCachyKernel {
-      pname = "linux-cachyos-bore";
-      inherit (linuxSources.latest) version src;
-      configVariant = "linux-cachyos-bore";
-      cpusched = "bore";
-    })
-    (mkCachyKernel {
-      pname = "linux-cachyos-bore-lto";
-      inherit (linuxSources.latest) version src;
-      configVariant = "linux-cachyos-bore";
-      lto = "thin";
-      cpusched = "bore";
     })
     (mkCachyKernel {
       pname = "linux-cachyos-deckify";

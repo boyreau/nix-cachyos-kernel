@@ -196,6 +196,8 @@
               cachyos-latest-lto = mkSystem "linuxPackages-cachyos-latest-lto";
               cachyos-lts = mkSystem "linuxPackages-cachyos-lts";
               cachyos-lts-lto = mkSystem "linuxPackages-cachyos-lts-lto";
+              cachyos-bore = mkSystem "linuxPackages-cachyos-bore";
+              cachyos-bore-lto = mkSystem "linuxPackages-cachyos-bore-lto";
             };
         };
       }
