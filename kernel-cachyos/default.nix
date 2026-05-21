@@ -155,6 +155,13 @@ builtins.listToAttrs (
       cpusched = "bore";
     })
     (mkCachyKernel {
+      pname = "linux-cachyos-bore-x86_64-v2";
+      inherit (linuxSources.latest) version src;
+      configVariant = "linux-cachyos-bore";
+      cpusched = "bore";
+      processorOpt = "x86_64-v2";
+    })
+    (mkCachyKernel {
       pname = "linux-cachyos-bore-x86_64-v3";
       inherit (linuxSources.latest) version src;
       configVariant = "linux-cachyos-bore";
@@ -181,6 +188,14 @@ builtins.listToAttrs (
       configVariant = "linux-cachyos-bore";
       lto = "thin";
       cpusched = "bore";
+    })
+    (mkCachyKernel {
+      pname = "linux-cachyos-bore-lto-x86_64-v2";
+      inherit (linuxSources.latest) version src;
+      configVariant = "linux-cachyos-bore";
+      lto = "thin";
+      cpusched = "bore";
+      processorOpt = "x86_64-v2";
     })
     (mkCachyKernel {
       pname = "linux-cachyos-bore-lto-x86_64-v3";
