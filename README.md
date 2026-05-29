@@ -2,10 +2,6 @@
 
 This repo contains Linux kernels with both [CachyOS patches](https://github.com/CachyOS/kernel-patches) and [CachyOS tunings](https://github.com/CachyOS/linux-cachyos), as well as [CachyOS-patched ZFS module](https://github.com/CachyOS/zfs).
 
-[![built with garnix](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Fgarnix.io%2Fapi%2Fbadges%2Fxddxdd%2Fnix-cachyos-kernel)](https://garnix.io/repo/xddxdd/nix-cachyos-kernel)
-
-> Note: If you see "all builds failed" from Garnix, it means I ran out of free plan's build time. I also have [my own Hydra CI](https://hydra.lantian.pub/jobset/lantian/nix-cachyos-kernel) that's building the kernels.
-
 ## Which kernel versions are provided?
 
 This repo provides the following kernel variants, consistent with the [upstream definitions](https://github.com/CachyOS/linux-cachyos?tab=readme-ov-file#kernel-variants--schedulers):
@@ -160,25 +156,6 @@ To manually use my binary cache, please add the following config:
 {
   nix.settings.substituters = [ "https://attic.xuyh0120.win/lantian" ];
   nix.settings.trusted-public-keys = [ "lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc=" ];
-}
-```
-
-**Important:** As with all binary caches, after adding binary cache to your NixOS configuration, please apply your settings once before enabling CachyOS kernel, so that the binary cache settings can take effect.
-
-This repo also has [Garnix CI](https://garnix.io) set up, and should work as long as the total build time is below the free plan threshold.
-
-Garnix CI only builds the latest/LTO kernel variants, with/without LTO, and without any CPU specific optimizations.
-
-[![built with garnix](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Fgarnix.io%2Fapi%2Fbadges%2Fxddxdd%2Fnix-cachyos-kernel)](https://garnix.io/repo/xddxdd/nix-cachyos-kernel)
-
-> If you see "all builds failed" from Garnix, it means I ran out of free plan's build time.
-
-To manually use it:
-
-```nix
-{
-  nix.settings.substituters = [ "https://cache.garnix.io" ];
-  nix.settings.trusted-public-keys = [ "cache.garnix.io:CTFPyKSLcx5RMJKfLo5EEPUObbA78b0YQ2DTCJXqr9g=" ];
 }
 ```
 
