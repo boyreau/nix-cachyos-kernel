@@ -44,19 +44,19 @@ This repo provides the following kernel variants, consistent with the [upstream 
         ├───linux-cachyos-bore-lto-zen4
         # Additional CachyOS kernel variants
         ├───linux-cachyos-bmq
-        ├───linux-cachyos-bmq-lto
+        ├───linux-cachyos-bmq-lto (no binary cache)
         ├───linux-cachyos-deckify
-        ├───linux-cachyos-deckify-lto
+        ├───linux-cachyos-deckify-lto (no binary cache)
         ├───linux-cachyos-eevdf
-        ├───linux-cachyos-eevdf-lto
+        ├───linux-cachyos-eevdf-lto (no binary cache)
         ├───linux-cachyos-hardened
-        ├───linux-cachyos-hardened-lto
+        ├───linux-cachyos-hardened-lto (no binary cache)
         ├───linux-cachyos-rc
-        ├───linux-cachyos-rc-lto
+        ├───linux-cachyos-rc-lto (no binary cache)
         ├───linux-cachyos-rt-bore
-        ├───linux-cachyos-rt-bore-lto
+        ├───linux-cachyos-rt-bore-lto (no binary cache)
         ├───linux-cachyos-server
-        └───linux-cachyos-server-lto
+        └───linux-cachyos-server-lto (no binary cache)
 ```
 
 The kernel versions are automatically kept in sync with Nixpkgs, so once the latest/LTS kernel is updated in Nixpkgs, CachyOS kernels in this repo will automatically catch up.
