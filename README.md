@@ -160,6 +160,19 @@ If you prefer to manually configure the binary cache (or are not using flakes), 
 
 **Important:** As with all binary caches, after adding binary cache to your NixOS configuration, please apply your settings once before enabling CachyOS kernel, so that the binary cache settings can take effect.
 
+#### Alternative binary cache
+
+> Disclaimer: I cannot guarantee the security or availability of these binary caches not maintained by me.
+
+[@bahrom04](https://github.com/bahrom04) is also providing CachyOS kernel builds mirrored from this repo. See [#89](https://github.com/xddxdd/nix-cachyos-kernel/issues/89) for details.
+
+```nix
+{
+  nix.settings.substituters = [ "https://cache.xinux.uz" ];
+  nix.settings.trusted-public-keys = [ "cache.xinux.uz:BXCrtqejFjWzWEB9YuGB7X2MV4ttBur1N8BkwQRdH+0=" ];
+}
+```
+
 ### Example configuration
 
 ```nix
