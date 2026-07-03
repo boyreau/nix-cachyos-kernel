@@ -11,8 +11,8 @@
   },
   "rc": {
     "version": "7.2-rc1",
-    "url": "https://github.com/CachyOS/linux/releases/download/cachyos-7.2-rc1-3/cachyos-7.2-rc1-3.tar.gz",
-    "hash": "sha256-gMTe9st9c9fLGzyFBi01ajhjplAHON6rRc1/k2yj/gI="
+    "url": "https://github.com/CachyOS/linux/releases/download/cachyos-7.2-rc1-4/cachyos-7.2-rc1-4.tar.gz",
+    "hash": "sha256-ztGGhRJ77xX8I0Nj19OIXOaEmgP4QmCbHrEYtdOq8sw="
   },
   "hardened": {
     "version": "7.0.12",
